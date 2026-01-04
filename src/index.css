@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* GYM POWERHOUSE DESIGN SYSTEM */
+
+@layer base {
+  :root {
+    /* Core Colors - Dark Gym Theme */
+    --background: 0 0% 4%; /* #0B0B0B */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    
+    --card: 0 0% 7%; /* #121212 */
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* Primary - Power Red */
+    --primary: 1 100% 44%; /* #E10600 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 1 100% 50%;
+    
+    /* Secondary - Dark Surface */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 71%; /* #B5B5B5 */
+    
+    /* Accent - Gold */
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 1 100% 44%;
+    
+    --radius: 0.5rem;
+    
+    /* Custom Gym Variables */
+    --gym-red: 1 100% 44%;
+    --gym-dark: 0 0% 4%;
+    --gym-card: 0 0% 7%;
+    --gym-border: 0 0% 18%;
+    --gym-text-secondary: 0 0% 71%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(1 100% 44% / 0.2) 0%, transparent 50%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 10%) 0%, hsl(0 0% 7%) 100%);
+    --gradient-glow: radial-gradient(circle, hsl(1 100% 44% / 0.3) 0%, transparent 70%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(1 100% 44% / 0.4);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
+    --shadow-button: 0 4px 20px hsl(1 100% 44% / 0.4);
+    
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 1 100% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 1 100% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+@layer components {
+  /* Hero Text Gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--muted-foreground)) 100%);
+  }
+  
+  .text-gradient-red {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+  }
+  
+  /* Glow Effects */
+  .glow-red {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-red-hover:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Card Styles */
+  .gym-card {
+    @apply bg-card rounded-lg border border-border;
+    background: var(--gradient-card);
+  }
+  
+  .gym-card-hover {
+    @apply gym-card transition-all duration-500;
+  }
+  
+  .gym-card-hover:hover {
+    @apply border-primary/50;
+    box-shadow: var(--shadow-card), 0 0 30px hsl(var(--primary) / 0.2);
+    transform: translateY(-8px);
+  }
+  
+  /* Section Styles */
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+  
+  .container-gym {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Stats Counter Animation */
+  .stats-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+  }
+  
+  /* Overlay Gradient */
+  .overlay-gradient {
+    background: linear-gradient(180deg, transparent 0%, hsl(var(--background)) 100%);
+  }
+  
+  .overlay-gradient-top {
+    background: linear-gradient(0deg, transparent 0%, hsl(var(--background) / 0.8) 100%);
+  }
+  
+  /* Line Accent */
+  .line-accent {
+    @apply w-12 h-1 bg-primary;
+  }
+  
+  /* Animated Underline */
+  .underline-animate {
+    @apply relative;
+  }
+  
+  .underline-animate::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .underline-animate:hover::after {
+    @apply w-full;
+  }
+  
+  /* Button Styles */
+  .btn-gym-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-sm uppercase tracking-widest transition-all duration-300;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .btn-gym-primary:hover {
+    @apply bg-primary/90;
+    box-shadow: var(--shadow-button);
+    transform: translateY(-2px);
+  }
+  
+  .btn-gym-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-foreground text-foreground font-semibold text-sm uppercase tracking-widest transition-all duration-300;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .btn-gym-outline:hover {
+    @apply bg-foreground text-background;
+  }
+  
+  /* Swiper Custom Styles */
+  .swiper-pagination-bullet {
+    @apply bg-muted-foreground opacity-50;
+  }
+  
+  .swiper-pagination-bullet-active {
+    @apply bg-primary opacity-100;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Image hover zoom */
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .img-zoom img {
+    @apply transition-transform duration-700;
+  }
+  
+  .img-zoom:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Pricing Card Glow */
+  .pricing-featured {
+    @apply relative;
+  }
+  
+  .pricing-featured::before {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-to-r from-primary to-primary-foreground/20 rounded-lg opacity-75 blur-sm;
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  /* Responsive spacing */
+  .space-section {
+    @apply space-y-16 md:space-y-24;
+  }
+  
+  /* Clip paths */
+  .clip-slant {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  
+  .clip-slant-reverse {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+}
