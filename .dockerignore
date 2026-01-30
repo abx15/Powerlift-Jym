@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+.github
+.env
+.DS_Store
+Dockerfile
+nginx.conf
+README.md
+LICENSE
+coverage

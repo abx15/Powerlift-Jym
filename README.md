@@ -1,5 +1,9 @@
 # PowerFit - Premium Fitness Center
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/abx15/Powerlift-Jym/actions/workflows/ci.yml/badge.svg)](https://github.com/abx15/Powerlift-Jym/actions/workflows/ci.yml)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fabx15%2FPowerlift-Jym)
+
 ![PowerFit Logo](public/jymSite.png)
 
 A modern, responsive fitness website built with React and TypeScript, featuring premium gym services, expert trainers, diverse fitness programs, and state-of-the-art facilities.
@@ -17,149 +21,96 @@ A modern, responsive fitness website built with React and TypeScript, featuring 
 ## 🛠️ Tech Stack
 
 ### Frontend Framework
+
 - **React 18** - Modern React with hooks and functional components
 - **TypeScript** - Type-safe development
 - **Vite** - Fast build tool and development server
 
 ### UI & Styling
+
 - **Tailwind CSS** - Utility-first CSS framework
 - **ShadCN UI** - High-quality React components
 - **Radix UI** - Accessible component primitives
 - **Lucide React** - Beautiful icons
 
 ### Libraries & Tools
+
 - **React Router** - Client-side routing
 - **TanStack Query** - Data fetching and caching
 - **GSAP** - High-performance animations
 - **Lenis** - Smooth scrolling library
 - **React Hook Form** - Form handling
 - **Zod** - Schema validation
-- **Swiper** - Touch-enabled carousels
-- **Recharts** - Data visualization
 
-### Development Tools
-- **ESLint** - Code linting
-- **PostCSS** - CSS processing
-- **Autoprefixer** - CSS vendor prefixing
+## 🚀 Getting Started
 
-## 📋 Prerequisites
+### Prerequisites
 
-Before running this project, make sure you have the following installed:
+- **Node.js** (version 20 or higher recommended)
+- **npm** package manager
 
-- **Node.js** (version 16 or higher)
-- **npm** or **yarn** or **bun** package manager
-- **Git** for version control
-
-## 🚀 Installation
+### Local Installation
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/your-username/apex-fitness-pro.git
-   cd apex-fitness-pro-main
+   git clone https://github.com/abx15/Powerlift-Jym.git
+   cd Powerlift-Jym
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
-   # or
-   yarn install
-   # or
-   bun install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
-   # or
-   yarn dev
-   # or
-   bun run dev
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:5173` to view the application.
+   Navigate to `http://localhost:8080` (or the port shown in terminal).
 
-## 📖 Usage
+### 🐳 Docker Usage
 
-### Development
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run build:dev    # Build for development
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
-```
+Build and run the containerized application:
 
-### Available Scripts
-- `dev` - Starts the development server
-- `build` - Creates a production build
-- `build:dev` - Creates a development build
-- `lint` - Runs ESLint for code quality
-- `preview` - Previews the production build locally
+1. **Build the image**
 
-## 📁 Project Structure
+   ```bash
+   docker build -t powerfit .
+   ```
 
-```
-apex-fitness-pro-main/
-├── public/                    # Static assets
-│   ├── favicon.ico
-│   ├── jymSite.png
-│   ├── placeholder.svg
-│   └── robots.txt
-├── src/
-│   ├── assets/               # Images and media files
-│   ├── components/           # Reusable React components
-│   │   ├── ui/              # ShadCN UI components
-│   │   └── layout/          # Layout components
-│   ├── data/                # Static data and constants
-│   ├── hooks/               # Custom React hooks
-│   ├── lib/                 # Utility functions
-│   ├── pages/               # Page components
-│   ├── App.tsx              # Main App component
-│   ├── main.tsx             # Application entry point
-│   └── index.css            # Global styles
-├── .gitignore
-├── components.json          # ShadCN configuration
-├── eslint.config.js         # ESLint configuration
-├── index.html               # HTML template
-├── package.json             # Dependencies and scripts
-├── postcss.config.js        # PostCSS configuration
-├── tailwind.config.ts       # Tailwind CSS configuration
-├── tsconfig.json            # TypeScript configuration
-├── vite.config.ts           # Vite configuration
-└── README.md                # Project documentation
-```
+2. **Run the container**
+   ```bash
+   docker run -p 8080:80 powerfit
+   ```
+   Access the app at `http://localhost:8080`.
 
-## 🎯 Key Components
+## ☁️ Deployment
 
-### Pages
-- **Index** - Landing page with hero section and overview
-- **About** - Company information and mission
-- **Programs** - Available fitness programs
-- **ProgramDetails** - Detailed program information
-- **Trainers** - Trainer profiles and expertise
-- **Pricing** - Membership plans and pricing
-- **Gallery** - Facility photos and equipment
-- **Contact** - Contact form and information
-- **NotFound** - 404 error page
+### Vercel
 
-### UI Components
-- **Navbar** - Navigation menu
-- **Footer** - Site footer with links
-- **ProgramCard** - Program display cards
-- **TrainerCard** - Trainer profile cards
-- **PricingCard** - Pricing plan cards
-- **TestimonialCard** - Customer testimonials
-- **StatCounter** - Animated statistics
-- **SectionTitle** - Section headings
+This project is optimized for Vercel. A `vercel.json` file is included to handle SPA routing.
+
+1. Install Vercel CLI: `npm i -g vercel`
+2. Deploy: `vercel`
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## 🔒 Security
+
+For security concerns, please review our [Security Policy](SECURITY.md).
 
 ## 📄 License
 
@@ -168,10 +119,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **PowerFit**
-- Website: [powerfit.com](https://powerfit.com)
-- Email: info@powerfit.com
-- Twitter: [@PowerFit](https://twitter.com/PowerFit)
+
+- Maintainer: [abx15](https://github.com/abx15)
+- Email: arunkumarbind150720@gmail.com
+- Repository: [github.com/abx15/Powerlift-Jym](https://github.com/abx15/Powerlift-Jym)
 
 ---
 
-Built with ❤️ using React, TypeScript, and modern web technologies.
+Built with ❤️ by [abx15](https://github.com/abx15)
